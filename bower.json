@@ -1,0 +1,20 @@
+{
+  "name": "habitsApp",
+  "version": "0.0.0",
+  "authors": [
+    "Gabriel Zeck"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

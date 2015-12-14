@@ -58,7 +58,7 @@ gulp.task('scripts', function() {
           runSequence('webserver');
         }
       })));
-  }
+  };
 
   if (dev) {
     gulp.src(filePath)
@@ -78,6 +78,13 @@ gulp.task('scripts', function() {
   }
 });
 
+gulp.task("less", function() {
+  return gulp.src('app/styles/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('app/styles/main.css'));
+});
 
 gulp.task('imagemin', function() {
   return gulp.src('app/images/*')
@@ -91,7 +98,7 @@ gulp.task('imagemin', function() {
 gulp.task('copy', function() {
   return gulp.src(['app/*.txt', 'app/*.ico'])
     .pipe(gulp.dest('dist'));
-})
+});
 
 gulp.task('bundle', function () {
   var assets = $.useref.assets();
